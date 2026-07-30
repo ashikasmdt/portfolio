@@ -1,3 +1,25 @@
-from django.shortcuts import render
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 
-# Create your views here.
+from .models import Profile
+from .serializers import ProfileSerializer
+
+
+class ProfileAPIView(APIView):
+    
+    def get(self, request):
+        profile = Profile.objects.first()
+        
+        if not profile:
+            return Response(
+                {
+                    "message": "Profile not found"
+                },
+                
+                status=status.HTTP_404_NOT_FOUND
+            )
+        
+        serializer = ProfileSerializer(profile)
+        
+        return Response(serializer.data)
