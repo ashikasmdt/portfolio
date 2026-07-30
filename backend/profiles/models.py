@@ -49,5 +49,11 @@ class Profile(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
     
+    class Meta:
+        verbose_name : "Profile"
+        verbose_name_plural = "Profiles"
+        ordering = ["full_name"]
+        
+   
     def __str__(self):
         return self.full_name
