@@ -1,0 +1,21 @@
+# Virtual Environment
+.venv/
+
+# Environment Variables
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Django Media
+media/
+
+# Static Files
+staticfiles/
+
+# VS Code
+.vscode/
+
+# Node
+node_modules/
