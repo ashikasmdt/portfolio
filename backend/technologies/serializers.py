@@ -17,3 +17,11 @@ class PublicTechnologySerializer(serializers.ModelSerializer):
             "icon",
             "website",
         )
+        
+class PublicTechnologySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Technology
+        fields = (
+            "name",
+            "icon",
+        )
