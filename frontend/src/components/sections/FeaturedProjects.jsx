@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-import { getFeaturedProjects } from "../../services/projectService"
+import { getProjects } from "../../services/projectService"
 import ProjectCard from "../../projects/ProjectCard"
 
 import { Link } from "react-router-dom"
@@ -13,7 +13,9 @@ function FeaturedProjects() {
 
   useEffect(() => {
 
-    getFeaturedProjects()
+    getProjects({
+        is_featured: true,
+    })
       .then((response) => {
         setProjects(response.data.results)
       })
