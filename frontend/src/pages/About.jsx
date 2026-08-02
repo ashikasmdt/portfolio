@@ -1,9 +1,10 @@
-function About () {
+import AboutSection from "../components/sections/About"
+
+
+function About() {
   return (
-    <h1>
-      About  Page
-    </h1>
+    <AboutSection />
   )
 }
 
-export default About  
+export default About
