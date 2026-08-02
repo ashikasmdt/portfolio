@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom"
 
-import Navbar from "./components/layout/Navbar"
+import MainLayout from "./components/layout/MainLayout"
 
 import Home from "./pages/Home"
 import About from "./pages/About"
@@ -9,9 +9,9 @@ import Contact from "./pages/Contact"
 
 
 function App() {
+
   return (
-    <>
-      <Navbar />
+    <MainLayout>
 
       <Routes>
 
@@ -24,8 +24,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
 
       </Routes>
-    </>
+
+    </MainLayout>
   )
 }
+
 
 export default App
