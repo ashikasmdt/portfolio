@@ -1,25 +1,20 @@
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
+from django.http import Http404
+
+from rest_framework import generics
 
 from .models import Profile
 from .serializers import ProfileSerializer
 
 
-class ProfileAPIView(APIView):
-    
-    def get(self, request):
+
+
+class ProfileAPIView(generics.RetrieveAPIView):
+    serializer_class = ProfileSerializer
+
+    def get_object(self):
         profile = Profile.objects.first()
-        
-        if not profile:
-            return Response(
-                {
-                    "message": "Profile not found"
-                },
-                
-                status=status.HTTP_404_NOT_FOUND
-            )
-        
-        serializer = ProfileSerializer(profile)
-        
-        return Response(serializer.data)
+
+        if profile is None:
+            raise Http404("Profile not found")
+
+        return profile

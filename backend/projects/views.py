@@ -10,7 +10,7 @@ from .serializers import (
 )
 
 
-class ProjectListView(generics.ListAPIView):
+class ProjectListAPIView(generics.ListAPIView):
     serializer_class = ProjectListSerializer
     
     filter_backends = [
@@ -51,7 +51,7 @@ class ProjectDetailsAPIView(generics.RetrieveAPIView):
     
     def get_queryset(self):
         return (
-            Project.objects.filter(is_active = True)
+            Project.objects.filter(is_active=True)
             .prefetch_related(
                 "technologies",
                 "images"
