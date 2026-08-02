@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "profiles",
     "technologies",
     "projects",
+    "contact",
 ]
 
 REST_FRAMEWORK = {

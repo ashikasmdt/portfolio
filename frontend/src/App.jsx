@@ -30,6 +30,7 @@ function App() {
             element={<ProjectDetails />}
         />
 
+
       </Routes>
 
     </MainLayout>
