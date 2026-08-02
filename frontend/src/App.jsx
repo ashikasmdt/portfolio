@@ -1,9 +1,15 @@
-import Home from "./pages/Home";
+import Navbar from "./components/layout/Navbar"
 
 function App() {
+  return (
+    <>
+      <Navbar />
 
-  return <Home />;
-  
+      <main>
+        Portfolio Website
+      </main>
+    </>
+  )
 }
 
-export default App;
+export default App
