@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 import { getProject } from "../services/projectService"
+import ProjectGallery from "../projects/ProjectGallery"
+import ProjectActions from "../projects/ProjectActions"
 
 function ProjectDetails() {
     const { slug } = useParams()
@@ -80,6 +82,12 @@ function ProjectDetails() {
                     {project.full_description}
                 </p>
             </div>
+
+            <ProjectGallery images={project.images} />
+            <ProjectActions
+                githubUrl={project.github_url}
+                liveDemoUrl={project.live_demo_url}
+            />
 
         </section>
     )

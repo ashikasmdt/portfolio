@@ -7,3 +7,7 @@ export const getFeaturedProjects = () => {
 export const getProject = (slug) => {
     return api.get(`projects/${slug}/`)
 }
+
+export const getProjects = () => {
+    return api.get("projects/")
+}
